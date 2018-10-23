@@ -144,7 +144,7 @@ namespace groveoleddisplay {
         /**
          * Init Grove - OLED Display
          */
-        //% blockId=grove_oled_init block="%strip|Init Grove - OLED Display"
+        //% blockId=grove_oled_init block="%oled|Init Grove - OLED Display"
         //% advanced=true
         init() {
             this.sendCommand(0xae);  // Display OFF 
@@ -174,7 +174,7 @@ namespace groveoleddisplay {
          * @param row which row to display, range from 0 to 15.
          * @param col which col to display, range from 0 to 127.
          */
-        //% blockId=grove_oled_set_text_xy block="%strip|Set display position at|%row|and|%col"
+        //% blockId=grove_oled_set_text_xy block="%oled|Set display position at|%row|and|%col"
         //% row.min=0 row.max=15
         //% col.min=0 col.max=127
         setTextXY(row:number, col:number) {
@@ -189,7 +189,7 @@ namespace groveoleddisplay {
         /**
          * Clear display
          */
-        //% blockId=grove_oled_clear_display block="%strip|Clear display"
+        //% blockId=grove_oled_clear_display block="%oled|Clear display"
         clearDisplay() {
             for(let i:number=0; i<16;i++){
                 this.sendCommand(0xb0+i);
@@ -218,7 +218,7 @@ namespace groveoleddisplay {
          * Display a string
          * @param s a string to display.
          */
-        //% blockId=grove_oled_put_string block="%strip|Display string |%s|"
+        //% blockId=grove_oled_put_string block="%oled|Display string |%s|"
         putString(s:string) {
             for (let n=0;n<s.length;n++){
                 this.putChar(s.charCodeAt(n));
@@ -229,7 +229,7 @@ namespace groveoleddisplay {
          * Display a integer number
          * @param num a integer number to display.
          */
-        //% blockId=grove_oled_put_number block="%strip|Display integer number |%num|"
+        //% blockId=grove_oled_put_number block="%oled|Display integer number |%num|"
         putNumber(num:number) {
             this.putString(num.toString());
         }
@@ -242,11 +242,12 @@ namespace groveoleddisplay {
          * @param column_number
          * @param bitmap
          */
-        //% blockId=grove_oled_draw_bitmap block="%strip|Draw bitmap start at |%x_start| |%y_start|, size |%row_number| x |%column_number|, bitmap:|%bitmap|"
+        //% blockId=grove_oled_draw_bitmap block="%oled|Draw bitmap start at |%x_start| |%y_start|, size |%row_number| x |%column_number|, bitmap:|%bitmap|"
         //% x.min=0 x.max=15
         //% y.min=0 y.max=127
         //% row_number.min=0 row_number.max=4
         //% column_number.min=0 column_number.max=32
+        //% advanced=true
         drawBitmap(x_start:number,y_start:number,row_number:number,column_number:number,bitmap:number[]) {
             let x_end = x_start+row_number;
             let y_end = y_start+column_number;
@@ -287,7 +288,7 @@ namespace groveoleddisplay {
          * @param y
          * @param len
          */
-        //% blockId=grove_oled_draw_hline block="%strip|Draw horizontal line start at |%x| |%y|, length |%len|"
+        //% blockId=grove_oled_draw_hline block="%oled|Draw horizontal line start at |%x| |%y|, length |%len|"
         //% y.min=0 y.max=127
         //% x.min=0 x.max=127
         //% len.min=1 len.max=128
@@ -305,7 +306,7 @@ namespace groveoleddisplay {
          * @param y
          * @param len
          */
-        //% blockId=grove_oled_draw_vline block="%strip|Draw vertical line start at |%x| |%y|, length |%len|"
+        //% blockId=grove_oled_draw_vline block="%oled|Draw vertical line start at |%x| |%y|, length |%len|"
         //% y.min=0 y.max=127
         //% x.min=0 x.max=127
         //% len.min=1 len.max=128
@@ -347,7 +348,7 @@ namespace groveoleddisplay {
          * @param x2
          * @param y2
          */
-        //% blockId=grove_oled_draw_rec block="%strip|Draw a rectangle start at |%x1| |%y1|, end at |%x2| |%y2|"
+        //% blockId=grove_oled_draw_rec block="%oled|Draw a rectangle start at |%x1| |%y1|, end at |%x2| |%y2|"
         //% y1.min=0 y1.max=127
         //% x1.min=0 x1.max=127
         //% y2.min=0 y2.max=127
