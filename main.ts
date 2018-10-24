@@ -324,20 +324,24 @@ namespace groveoleddisplay {
             for (let i=0;i<(x_max-x-len);i++) {
                 last_bit = last_bit - (0x01<<(7-i));
             }
+            let first_bit = 0x00;
+            for (let i=0;i<(x-x_min);i++) {
+                first_bit = first_bit + (0x01<<(7-i));
+            }
             
             if (x_max - x_min > 16) {
-                this.drawPixel(x_min,y,((0xff<<(x-x_min))&0xff));
+                this.drawPixel(x_min,y,first_bit);
                 for (let i=x_min+8;i<x_max-8;i=i+8){
                     this.drawPixel(i,y,0xff);
                 }
                 this.drawPixel(x_max-1,y,last_bit);
             }
             else if (x_max - x_min == 16) {
-                this.drawPixel(x_min,y,((0xff<<(x-x_min))&0xff));
+                this.drawPixel(x_min,y,first_bit);
                 this.drawPixel(x_max-1,y,last_bit);
             }
             else {
-                this.drawPixel(x_min,y,(((0xff<<(x-x_min)) & 0xff) & last_bit));
+                this.drawPixel(x_min,y,(first_bit & last_bit));
             }
         }
 
