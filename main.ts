@@ -296,7 +296,7 @@ namespace groveoleddisplay {
             let y_max = y + len;
             if (y_max > 128) y_max = 128;
             for (let i=y;i<y_max;i++) {
-                this.drawPixel(x,i,1<<(x%8));
+                this.drawPixel(x,i,0x01<<(x%8));
             }
         }
 
@@ -324,9 +324,9 @@ namespace groveoleddisplay {
             for (let i=0;i<(x_max-x-len);i++) {
                 last_bit = last_bit - (0x01<<(7-i));
             }
-            let first_bit = 0x00;
+            let first_bit = 0xff;
             for (let i=0;i<(x-x_min);i++) {
-                first_bit = first_bit + (0x01<<(7-i));
+                first_bit = first_bit - (0x01<<i);
             }
             
             if (x_max - x_min > 16) {
