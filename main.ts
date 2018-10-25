@@ -174,7 +174,7 @@ namespace groveoleddisplay {
          * @param row which row to display, range from 0 to 15.
          * @param col which col to display, range from 0 to 127.
          */
-        //% blockId=grove_oled_set_text_xy block="%oled|Set display position at|%row|and|%col"
+        //% blockId=grove_oled_set_text_xy block="%oled|Set display position at row|%row|and column|%col"
         //% row.min=0 row.max=15
         //% col.min=0 col.max=127
         setTextXY(row:number, col:number) {
@@ -242,7 +242,7 @@ namespace groveoleddisplay {
          * @param column_number
          * @param bitmap
          */
-        //% blockId=grove_oled_draw_bitmap block="%oled|Draw bitmap start at |%x_start| |%y_start|, size |%row_number| x |%column_number|, bitmap:|%bitmap|"
+        //% blockId=grove_oled_draw_bitmap block="%oled|Draw bitmap start at row|%x_start|and column|%y_start|, size: row|%row_number|and column|%column_number|, bitmap:|%bitmap|"
         //% x.min=0 x.max=15
         //% y.min=0 y.max=127
         //% row_number.min=0 row_number.max=4
@@ -288,7 +288,7 @@ namespace groveoleddisplay {
          * @param y
          * @param len
          */
-        //% blockId=grove_oled_draw_hline block="%oled|Draw horizontal line start at |%x| |%y|, length |%len|"
+        //% blockId=grove_oled_draw_hline block="%oled|Draw horizontal line start at x|%x|and y|%y|, length|%len|"
         //% y.min=0 y.max=127
         //% x.min=0 x.max=127
         //% len.min=1 len.max=128
@@ -306,7 +306,7 @@ namespace groveoleddisplay {
          * @param y
          * @param len
          */
-        //% blockId=grove_oled_draw_vline block="%oled|Draw vertical line start at |%x| |%y|, length |%len|"
+        //% blockId=grove_oled_draw_vline block="%oled|Draw vertical line start at x|%x|and y|%y|, length|%len|"
         //% y.min=0 y.max=127
         //% x.min=0 x.max=127
         //% len.min=1 len.max=128
@@ -352,7 +352,7 @@ namespace groveoleddisplay {
          * @param x2
          * @param y2
          */
-        //% blockId=grove_oled_draw_rec block="%oled|Draw a rectangle start at |%x1| |%y1|, end at |%x2| |%y2|"
+        //% blockId=grove_oled_draw_rec block="%oled|Draw a rectangle start at x|%x1|and y|%y1|, end at x|%x2|and y|%y2|"
         //% y1.min=0 y1.max=127
         //% x1.min=0 x1.max=127
         //% y2.min=0 y2.max=127
