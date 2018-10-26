@@ -312,7 +312,7 @@ namespace groveoleddisplay {
         //% len.min=1 len.max=128
         drawVLine(x: number, y: number, len: number) {
             let x_min = 0, x_max = 0;
-            x_min = (x / 8);
+            x_min = Math.floor((x / 8));
             x_max = x + len;
             x_min = x_min * 8;
             if (x_max > 128) x_max = 128;
